@@ -4,7 +4,7 @@ function solveEquation(a, b, c) {
   
   return arr;
 }
-
+Test
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   
 }
