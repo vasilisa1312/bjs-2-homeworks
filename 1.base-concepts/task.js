@@ -3,16 +3,16 @@ function solveEquation(a, b, c) {
 
   let arr;
 
-  let d = (b**2) - (4 * a * c);
-  if (d < 0) {
+  let discriminant = (b**2) - (4 * a * c);
+  if (discriminant < 0) {
     arr = []
-  }else if (d > 0) {
-    let d1=(-b+Math.sqrt(d))/(2*a);
-    let d2=(-b-Math.sqrt(d))/(2*a);
-    arr = [d1, d2]
-  }else if (d==0) {
-    let d3 = -b / ( 2 * a );
-    arr = [d3]
+  }else if (discriminant > 0) {
+    let discriminantFirst=(-b+Math.sqrt(discriminant))/(2*a);
+    let discriminantSecond=(-b-Math.sqrt(discriminant))/(2*a);
+    arr = [discriminantFirst, discriminantSecond]
+  }else if (discriminant==0) {
+    let discriminantThird = -b / ( 2 * a );
+    arr = [discriminantThird]
   }
 
   
