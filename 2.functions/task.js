@@ -38,10 +38,10 @@ function differenceMaxMinWorker(...arr) {
     }
   }
   result = max - min;
-  if (result < 0) {
+  if (isNaN(result)) {
     return 0;
-  } else {
-    return result;
+  }else {
+  return result;
   }
 }
 
