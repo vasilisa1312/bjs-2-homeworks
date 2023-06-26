@@ -22,15 +22,13 @@ Student.prototype.addMarks = function (...marks) {
 
 Student.prototype.getAverage = function () {
     let sum = 0;
-    for(let i = 0; i < this.marks.length; i++) {
-    sum += this.marks[i];
-  }
-  let result = sum/this.marks.length;
-  if (isNaN(result)) {
+    if (this.marks && this.marks.length) {
+      for(let i = 0; i < this.marks.length; i++) {
+        sum += this.marks[i];
+      }
+      return sum/this.marks.length;
+    }
     return 0;
-  }else {
-  return result;
-  }
 }
 
 Student.prototype.exclude = function (reason) {
@@ -45,7 +43,10 @@ student1.setSubject("Algebra");
 console.log(student1.getAverage());
 student1.addMarks(4, 5, 4, 5);
 console.log(student1.getAverage())
+
 let student2 = new Student("Артём", "мужской", 25);
 student2.setSubject("Geometry");
 student2.exclude('плохая учёба')
+student2.addMarks(4, 5, 4, 5);
+console.log(student2.getAverage())
 console.log(student2)
