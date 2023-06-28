@@ -64,3 +64,63 @@ class DetectiveBook extends Book {
         this.type = "detective";
     }
 }
+
+
+
+
+
+
+
+
+class Library {
+    constructor(name){
+        this.name = name;
+        this.books = [];
+    }
+
+    addBook(book){
+        if(book.state > 30){
+            this.books.push(book);
+        }
+    }
+
+    findBookBy(type, value){
+        let result = this.books.findIndex(e => e[type] === value);
+        if(result !==-1) {
+            return this.books[result];
+        }else {
+            return null;
+        }
+    }
+
+    giveBookByName(bookName){
+        let result = this.books.findIndex(e => e.name === bookName);
+        if(result !==-1) {
+            return this.books[result];
+            this.books.splice(result, 1);
+            
+        }else {
+            return null;
+        }
+    }
+}
+
+
+const library = new Library("Библиотека имени Ленина");
+
+ library.addBook(
+  new DetectiveBook(
+    "Артур Конан Дойл",
+    "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
+    2019,
+    1008
+  )
+);
+library.addBook(
+  new FantasticBook(
+    "Аркадий и Борис Стругацкие",
+    "Пикник на обочине",
+    1972,
+    168
+  )
+);
